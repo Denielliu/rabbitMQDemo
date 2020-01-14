@@ -1,0 +1,85 @@
+############################################################
+#
+# Spring 相关配置
+#
+############################################################
+spring:
+  application:
+    name: rabbiitMQDemo
+  servlet:
+    multipart:
+        # 设置总上传数据总大小
+        max-request-size: 100MB
+        # 设置文件的最大值
+        max-file-size: 100MB
+
+  # 静态资源路径
+  resources:
+    static-locations: classpath:/, classpath:/static/
+  mvc:
+    static-path-pattern: /**
+
+############################################################
+#
+# tomcat 相关配置
+#
+############################################################
+    tomcat:
+      max-active: 500
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+
+############################################################
+#
+# RabbitMQ 相关配置
+#
+############################################################
+  rabbitmq:
+    # 服务地址
+    addresses: 127.0.0.1:5672
+    # 用户名
+    username: guest
+    # 密码
+    password: guest
+    # 虚拟主机
+    virtual-host: /
+    # 连接超时时间
+    connection-timeout: 15000
+    # 消费端配置
+    listener:
+      simple:
+        # 连接数
+        concurrency: 5
+        # 最大连接数
+        max-concurrency: 1000
+        # 接受方式:手动
+        acknowledge-mode: manual
+        # 消息预取数量
+        prefetch: 1
+############################################################
+#
+# web 相关配置
+#
+############################################################
+  http:
+    encoding:
+      # 编码规则
+      charset: UTF-8
+  jackson:
+    # 时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    # 时间戳
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+############################################################
+#
+# Server 服务端相关配置
+#
+############################################################
+server:
+  port: 8081
+  servlet:
+    context-path: /
