@@ -5,7 +5,7 @@
 ############################################################
 spring:
   application:
-    name: rabbiitMQDemo
+    name: rabbitMQDemo
   servlet:
     multipart:
         # 设置总上传数据总大小
@@ -18,19 +18,6 @@ spring:
     static-locations: classpath:/, classpath:/static/
   mvc:
     static-path-pattern: /**
-
-############################################################
-#
-# tomcat 相关配置
-#
-############################################################
-    tomcat:
-      max-active: 500
-      initial-size: 1
-      max-wait: 60000
-      min-idle: 1
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
 
 ############################################################
 #
