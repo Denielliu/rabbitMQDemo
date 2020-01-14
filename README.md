@@ -1,0 +1,2 @@
+# rabbitMQDemo
+springboot集成RabbitMQ并使用ProtoBuf发送消息,通过Swagger测试
