@@ -1,4 +1,4 @@
-package com.hgt.demo.Controller;
+package com.hgt.demo.controller;
 
 import com.hgt.demo.model.Person;
 import com.hgt.demo.mq.Sender;
